@@ -3,7 +3,7 @@
 // Created: Venkatesh Murugadas
 // Date : 08/11/2020
 // Change history:
-//      1.
+//      1. change 1 : Formatting the Query URL to output the result in the format of JSON
 //      2.
 /****************************************************/
 
@@ -39,7 +39,7 @@ $(document).ready(function ()
 {
     //specific URL form of the SPARQL query to get output in JSON
     var endpoint = "http://dbpedia.org/sparql/?query=";
-    var result_json = "&format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on&run=+Run+Query+";
+    var result_json = "&format=json"; //change 1
     var pred_query = "SELECT ?p WHERE { ?p rdf:type rdf:Property.}";
 
     $.when(
@@ -94,7 +94,7 @@ function getObjectValue()
             {
                 //specific URL form of the SPARQL query to get output in JSON
                 var obj_endpoint = "http://dbpedia.org/sparql/?query=";
-                var obj_result_json = "&format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on&run=+Run+Query+";
+                var obj_result_json = "&format=json"; //change 1
                 var obj_query = "SELECT ?p WHERE { " + chosenPredVal + " rdfs:range ?s. ?p a ?s.}";
 
                 $.when(
